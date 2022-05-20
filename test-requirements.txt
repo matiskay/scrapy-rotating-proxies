@@ -1,0 +1,2 @@
+scrapy
+attrs > 16.0.0
