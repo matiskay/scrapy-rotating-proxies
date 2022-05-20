@@ -31,8 +31,6 @@ setup(
     packages=find_packages(exclude=['tests']),
     install_requires=[
         'attrs > 16.0.0',
-        'six',
-        'typing',
     ],
     classifiers=[
         'Development Status :: 3 - Alpha',
@@ -40,12 +38,8 @@ setup(
         'Intended Audience :: Developers',
         'Operating System :: OS Independent',
         'Framework :: Scrapy',
-        'Programming Language :: Python',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5',
-        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
     ],
 )

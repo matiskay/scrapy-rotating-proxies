@@ -1,8 +1,8 @@
-# -*- coding: utf-8 -*-
 from rotating_proxies.expire import Proxies, exp_backoff
 
 
 def test_proxies():
+    # Test if random proxy is in the list of proxies
     proxy_list = ['foo', 'bar', 'baz']
     p = Proxies(proxy_list)
     proxy = p.get_random()
@@ -10,17 +10,22 @@ def test_proxies():
 
     proxy = p.get_proxy('foo')
     assert proxy in proxy_list
+    # Test if proxy is not in the list
     proxy = p.get_proxy('wom')
     assert not proxy
 
+    # Test mark proxies as dead and only return the
+    # one available
     p.mark_dead('bar')
     p.mark_dead('baz')
 
     assert p.get_random() == 'foo'
 
+    # Test when all the proxies are dead
     p.mark_dead('foo')
     assert p.get_random() is None
 
+    # Mark a proxy as good and see if it's available
     p.mark_good('bar')
     assert p.get_random() == 'bar'
 
